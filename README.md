@@ -12,8 +12,7 @@ This project focused on the design and development of an electronically
 stabilized spoon to assist individuals with Parkinson's disease by compensating
 tremors during meal consumption, promoting greater independence and comfort in
 daily life. The work was developed in collaboration with a team of colleagues,
-with my contribution — focused on mechanical design and the control system —
-made remotely while based in Vienna.
+with my contribution made remotely while based in Vienna.
 
 The device integrates mechanical, electronic, and control system design:
 
@@ -109,10 +108,8 @@ The analysis focused on two tremor-related tasks from the reference dataset:
 - **Angular velocity range** → used to select the IMU gyroscope full-scale range.
 - **Global maximum/dominant frequency** → used to define the minimum IMU sampling rate (via Nyquist criterion) and to size the servo motor bandwidth/response requirements.
 
-Results informed the electronic design directly: a maximum signal frequency of
-42 Hz and dominant frequency of 12.3 Hz were used to set the IMU sampling rate
-(respecting the Nyquist theorem), while the acceleration range (±1.32 g) and
-angular velocity range (±4.91 rad/s) informed the sensor configuration.
+Results informed the electronic design directly: a maximum signal frequency of 42 Hz and dominant frequency of 12.3 Hz were used to set the IMU sampling rate
+(respecting the Nyquist theorem), while the acceleration range (±1.32 g) and angular velocity range (±4.91 rad/s) informed the sensor configuration.
 
 ## Key Results
 
@@ -120,14 +117,11 @@ angular velocity range (±4.91 rad/s) informed the sensor configuration.
 - Total weight: 133.4 g (spoon: 81 g)
 - Overall length: 200 mm, comparable to a standard spoon
 - Production cost: €69.28 (under the €100 target)
-- Self-evaluation score: 34/40 across washability, safety, ergonomics, and
-  marketability criteria
+- Self-evaluation score: 34/40 across washability, safety, ergonomics and marketability criteria
 
 ## How to Use This Repository
 
 - To review the firmware logic, see `firmware/TCS_control.ino`
 - To inspect the PCB design, open the Eagle files (`.sch`/`.brd`) in `electronics/`
 - To view the mechanical design, open the `.step` files inside `cad/.step Files/`
-- To reproduce the tremor data analysis, open the MATLAB scripts in
-  `data-analysis/`
-- For the full methodology, results, and discussion, see `docs/`
+- To reproduce the tremor data analysis, open the MATLAB scripts in `data-analysis/`
