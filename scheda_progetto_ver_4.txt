@@ -1,0 +1,27 @@
+Order list for C:/Users/marzi/OneDrive/Documenti/EAGLE/projects/Scheda_progetto_VER_4_2/Scheda_progetto_VER_4_2/scheda_progetto_ver_4.2.sch
+Exported from EAGLE with DesignLink
+
+Quantity	Value	Package	Order code	Manufacturer	Manuf. Code	Availability	Price (from)	Description
+2	4,7uF_16V	TAN-A	2333019	KYOCERA AVX	TAJA475M016RNJ	3195	0.094	KYOCERA AVX - TAJA475M016RNJ - Condensatore al tantalio SMT, 4.7 µF, 16 V, 1206 [3216 metrico], ± 20%, 4 ohm, A
+5	1uF	C0603	3340859	KYOCERA AVX	0603YC105KAT4A	11449	0.034	KYOCERA AVX - 0603YC105KAT4A - Condensatore ceramico multistrato SMD, 1 µF, 16 V, 0603 [1608 metrico], ± 10%, X7R
+5	0.1 uF	C0603	2904649	KEMET	C0603C104K3RECTU	1830	0.028	KEMET - C0603C104K3RECTU - Condensatore ceramico multistrato SMD, ESD, 0.1 µF, 25 V, 0603 [1608 metrico], ± 10%, X7R
+1	0.01 uF	C0603	2456107	MURATA	GRM1885C1H103JA01D	29047	0.08	MURATA - GRM1885C1H103JA01D - CON. 0.01µF, 50V, 5%, C0G/NP0, 0603
+1	2200 pF	C0603	2534028	WURTH ELEKTRONIK	885012206061	1965	0.0103	WURTH ELEKTRONIK - 885012206061 - Condensatore ceramico multistrato SMD, 2200 pF, 25 V, 0603 [1608 metrico], ± 10%, X7R, WCAP-CSGP
+1	SS1P3L	DO220AAL	2889242	VISHAY	SS1P3L-M3/84A	2550	0.108	VISHAY - SS1P3L-M3/84A - Raddrizzatore Schottky, 30 V, 1.5 A, singolo, DO-220AA, 2 Pin, 450 mV
+1	MFFSMF050	0603-1608X90N	1717227	BOURNS	MF-FSMF050X-2	7337	0.336	BOURNS - MF-FSMF050X-2 - Fusibile ripristinabile PPTC, 0603 (1608 metrico), MF-FSMF, 6 VDC, 500 mA, 1 A, 0.1 s
+1	FT232RL	SSOP28	unknown					
+1	LM1117IMPX-5.0	LINEAR_SOT223	unknown					
+1	328P-MUR	VQFN32	2425125	MICROCHIP	ATMEGA328P-MUR	45330	2.44	MICROCHIP - ATMEGA328P-MUR - MCU a 8 bit, bassa potenza, alte prestazioni, AVR ATmega Family ATmega328 Series Microcontrollers
+1	MCP73213T-A6AI_MF	SON50P300X300X100-11N	unknown					
+1	694106105102	CONN3_06105102_WRE	2472147	WURTH ELEKTRONIK	694106105102	272	1.08	WURTH ELEKTRONIK - 694106105102 - Connettore di alimentazione DC, femmina, 5 A, 2 mm, montaggio superficiale (SMT)
+1	67503-1020	675031020	1125348	MOLEX	67503-1020...	7498	0.773	MOLEX - 67503-1020... - Connettore USB, mini USB tipo B, USB 2.0, femmina, 5 Vie, montaggio superficiale (SMT)
+1		1X02	3398291	AMP - TE CONNECTIVITY	171826-2	7110	0.178	AMP - TE CONNECTIVITY - 171826-2 - Connettore a strip maschio, R/A, filo-scheda, 2.5 mm, 1 File, 2 Contatti
+1		2X03	3049596	MOLEX	87911-0611	471	0.507	MOLEX - 87911-0611 - Connettore a strip maschio, scheda a scheda, 2.54 mm, 2 File, 6 Contatti
+2	Green	CHIPLED_0805	2099239	KINGBRIGHT	KPT-2012SGC	15562	0.0824	KINGBRIGHT - KPT-2012SGC - LED, bassa potenza, verde, SMD, 0805 [2012 metrico], 20 mA, 2.2 V, 568 nm
+2	4.7 KΩ	R0603	3495312	YAGEO	AC0603JR-074K7L	3289	0.0028	YAGEO - AC0603JR-074K7L - Resistore a chip SMD, 4.7 kohm, ± 5%, 100 mW, 0603 [1608 metrico], film spesso
+5	1K	R0603	1770133	BOURNS	CAY16-102J4LF	22350	0.0176	BOURNS - CAY16-102J4LF - Resistore di rete fisso, 1 kohm, Isolato, 4 Resistors, 1206 [3216 metrico], Convessi, ± 5%
+1	3K	R0603	2908368	BOURNS	CR0603-JW-302ELF	76925	0.0018	BOURNS - CR0603-JW-302ELF - Resistore a chip SMD, 3 kohm, ± 5%, 100 mW, 0603 [1608 metrico], film spesso, per scopi generici
+1	RESET	SMD_157SW	1634693	MULTICOMP PRO	R13-24AL-05-BB	22014	0.888	MULTICOMP PRO - R13-24AL-05-BB - Interruttore a pulsante, R13-24, 7.2 mm, SPST-NA, Off-(On), rotondo, nero
+1	MFS201N-16-Z	MFS201N-16-Z_NDC	2854845	NIDEC COMPONENTS	MFS201N-16-Z	14	1.3	NIDEC COMPONENTS - MFS201N-16-Z - Interruttore a slitta, superminiaturizzato, DPDT, On-On, foro passante (THT), MFS, 1 A, 125 V
+1	MPU-6050	QFN50P400X400X95-24N	1864742	TDK INVENSENSE	MPU-6050	0	4.92	TDK INVENSENSE - MPU-6050 - Modulo MEMS, serie MotionTracking, giroscopio/accelerometro triassiale, ±16g, 2,375V-3,46V, QFN-24
+1	16MHz	RESONATOR	unknown					
