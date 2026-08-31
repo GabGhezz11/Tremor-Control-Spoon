@@ -1,4 +1,4 @@
-# Tremor Control Spoon
+# Description
 
 An electronic Tremor Control Spoon designed to compensate involuntary hand 
 tremors in Parkinson's disease patients during meals, developed as part of the 
@@ -52,6 +52,69 @@ regulation and USB communication circuits.
 to estimate roll and pitch angles, driving the servos to counteract tremor in 
 real time while allowing intentional tilting (e.g., to scoop food).
 
+## Personal Contribution - Matlab Data Analysis
+
+The analysis focused on two tremor-related tasks from the reference dataset:
+
+- **Kinetic tremor (task AS316)**: analyzed to extract the acceleration and 
+  angular velocity ranges during a spoon-eating-like motion.
+- **Postural tremor (task AS315)**: analyzed to identify the maximum and 
+  dominant frequencies of the Parkinsonian tremor signal.
+
+### Scripts
+
+| Script | Purpose |
+
+| `Ranges_acc_v.mlx` | Computes the acceleration and angular velocity **ranges** (kinetic tremor, all 3 subjects, all 3 sensor locations) |
+
+| `Dominant_freq_subj1.mlx` | Computes the **dominant frequency** of acc/gyro signals for Subject 1 (postural tremor) |
+
+| `Dominant_freq_subj2.mlx` | Computes the **dominant frequency** of acc/gyro signals for Subject 2 (postural tremor) |
+
+| `Dominant_freq_subj3.mlx` | Computes the **dominant frequency** of acc/gyro signals for Subject 3 (postural tremor) |
+
+| `Dominant_freq_global.mlx` | Aggregates the dominant-frequency results of all subjects/locations and returns the global maximum |
+
+| `Max_freq_subj1.mlx` | Computes the **maximum frequency** (95% PSD energy threshold) for Subject 1 (postural tremor) |
+
+| `Max_freq_subj2.mlx` | Computes the **maximum frequency** (95% PSD energy threshold) for Subject 2 (postural tremor) |
+
+| `Max_freq_subj3.mlx` | Computes the **maximum frequency** (95% PSD energy threshold) for Subject 3 (postural tremor) |
+
+| `Max_freq_global.mlx` | Aggregates the maximum-frequency results of all subjects/locations and returns the global maximum |
+
+| `createFit.m` | Auto-generated helper (MATLAB Distribution Fitter) used to fit a probability distribution to the angular velocity data |
+
+### Methodology
+
+**1. Signal preprocessing**
+- Raw 3-axis accelerometer and gyroscope data are extracted from the dataset (`Subj{i}.off.taskASxxx.<sensor_location>.acc/.gyro`).
+- A 4th-order Butterworth **high-pass filter** (cut-off 1 Hz), applied with `filtfilt` (zero-phase), removes gravity/motion bias while preserving tremor content.
+- The 3-axis signals are combined into a single magnitude signal via the Euclidean norm (vector module).
+
+**2. Frequency-domain analysis (postural tremor)**
+- The **Power Spectral Density (PSD)** of the filtered signal is estimated with `periodogram`.
+- **Dominant frequency**: frequency corresponding to the PSD peak.
+- **Maximum frequency**: frequency below which 95% of the cumulative PSD energy is contained (computed via `trapz` on the PSD curve).
+- Both metrics are computed per subject, per sensor location (index, thumb, metacarpus), and per signal type (acceleration, angular velocity), then aggregated across subjects to obtain the **global maximum/dominant frequency**, used to define the minimum IMU sampling rate (Nyquist criterion).
+
+**3. Amplitude analysis (kinetic tremor)**
+- Acceleration and angular velocity magnitudes are pooled across all subjects and sensor locations.
+- A **kernel density estimate** (`ksdensity`, positive support) is computed for both signals.
+- The upper bound of the working range is defined as the value below which 95% of the cumulative probability density falls; the range is then obtained by mirroring this value onto the negative axis (assuming symmetric bidirectional motion).
+- The result is cross-checked against the 95th percentile/quantile of the raw pooled data (`quantile`, `prctile`) as a validation step.
+- `createFit.m` is used to verify that the angular velocity distribution is **not normal**, justifying the use of the empirical (KDE-based) approach instead of a parametric one.
+
+### Outputs used for hardware design
+- **Acceleration range** → used to select the IMU accelerometer full-scale range.
+- **Angular velocity range** → used to select the IMU gyroscope full-scale range.
+- **Global maximum/dominant frequency** → used to define the minimum IMU sampling rate (via Nyquist criterion) and to size the servo motor bandwidth/response requirements.
+
+Results informed the electronic design directly: a maximum signal frequency of 
+42 Hz and dominant frequency of 12.3 Hz were used to set the IMU sampling rate 
+(respecting the Nyquist theorem), while the acceleration range (±1.32 g) and 
+angular velocity range (±4.91 rad/s) informed the sensor configuration.
+
 ## Key Results
 
 - Compensates roll and pitch within ±30° on both axes
@@ -70,5 +133,4 @@ real time while allowing intentional tilting (e.g., to scoop food).
 - To reproduce the tremor data analysis, open the MATLAB scripts in 
   `data-analysis/`
 - For the full methodology, results, and discussion, see `docs/`
-
 
